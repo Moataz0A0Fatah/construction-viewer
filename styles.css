@@ -1,0 +1,160 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background: #1a1a2e;
+  color: #eee;
+  overflow: hidden;
+  height: 100vh;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+#toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 1rem;
+  background: #16213e;
+  border-bottom: 1px solid #0f3460;
+  z-index: 10;
+}
+
+#toolbar h1 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #e94560;
+}
+
+.tools {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.tools button {
+  background: #0f3460;
+  color: #eee;
+  border: 1px solid #1a1a2e;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: background 0.2s;
+}
+
+.tools button:hover {
+  background: #e94560;
+}
+
+.tools button.active {
+  background: #e94560;
+  border-color: #e94560;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+#viewport {
+  flex: 1;
+  position: relative;
+}
+
+#viewport canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.panel {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 300px;
+  max-height: calc(100% - 2rem);
+  background: rgba(22, 33, 62, 0.95);
+  border: 1px solid #0f3460;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: blur(8px);
+}
+
+.panel.hidden {
+  display: none;
+}
+
+.panel h2 {
+  font-size: 0.9rem;
+  padding: 0.6rem 0.8rem;
+  background: #0f3460;
+  border-bottom: 1px solid #1a1a2e;
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #0f3460;
+}
+
+.panel-header button {
+  background: none;
+  border: none;
+  color: #eee;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.6rem 0.8rem;
+}
+
+#info-content {
+  padding: 0.8rem;
+  overflow-y: auto;
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+.hint {
+  color: #888;
+  font-style: italic;
+}
+
+#info-content .prop-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.2rem 0;
+  border-bottom: 1px solid #0f3460;
+}
+
+#info-content .prop-key {
+  color: #e94560;
+  font-weight: 500;
+}
+
+#dwf-container {
+  flex: 1;
+  min-height: 400px;
+  position: relative;
+}
+
+.measurement-label {
+  background: #e94560;
+  color: #fff;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  pointer-events: none;
+}

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Construction 3D Viewer</title>
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <header id="toolbar">
+        <h1>Construction 3D Viewer</h1>
+        <div class="tools">
+          <button id="btn-measure" title="Measure distance">📏 Measure</button>
+          <button id="btn-clear-measure" title="Clear measurements">✕ Clear</button>
+          <button id="btn-toggle-dwf" title="Toggle DWF panel">📄 DWF Sheets</button>
+        </div>
+      </header>
+
+      <main>
+        <div id="viewport"></div>
+
+        <aside id="info-panel" class="panel">
+          <h2>Object Info</h2>
+          <div id="info-content">
+            <p class="hint">Click an object in the model to see its name.</p>
+          </div>
+        </aside>
+
+        <aside id="dwf-panel" class="panel hidden">
+          <div class="panel-header">
+            <h2>DWF Sheet</h2>
+            <button id="btn-close-dwf">✕</button>
+          </div>
+          <div id="dwf-container"></div>
+        </aside>
+      </main>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
